@@ -9,9 +9,9 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
       color: #ffffff;
       text-align: center;
+      transition: background 1s ease-in-out;
     }
 
     header {
@@ -27,14 +27,14 @@
     h2 {
       font-weight: 400;
       font-size: 18px;
-      color: #cbd5e1;
+      color: #e2e8f0;
       margin: 4px 0;
     }
 
     .subtitle {
       margin-top: 10px;
       font-size: 14px;
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     .links {
@@ -56,7 +56,7 @@
     .experience {
       margin-top: 20px;
       font-size: 14px;
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     .section {
@@ -72,18 +72,19 @@
     }
 
     .card {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(5px);
       padding: 20px;
       width: 240px;
       border-radius: 8px;
       text-decoration: none;
       color: white;
-      transition: 0.2s ease;
+      transition: 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: #273449;
+      background: rgba(39, 52, 73, 0.95);
     }
 
     .card h3 {
@@ -94,14 +95,14 @@
 
     .card p {
       font-size: 13px;
-      color: #cbd5e1;
+      color: #e2e8f0;
     }
 
     footer {
       padding: 20px;
       font-size: 13px;
-      color: #64748b;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #e2e8f0;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
   </style>
 </head>
@@ -128,7 +129,6 @@
 </header>
 
 <div class="section">
-
   <div class="cards">
 
     <a class="card" href="https://dashboard.godaddy.com/venture?ventureId=e1c7373e-4c52-44ed-8beb-f9de31d9b2ee&itc=vh_ventureredirect&referrer=venture-redirector" target="_blank">
@@ -141,16 +141,17 @@
       <p>AWS CONSOLE.</p>
     </a>
 
-    <a class="card" href="https://classroom.google.com/c/ODIxMzQ0OTg5NzU0" target="_blank">
+    <a class="card" href="https://classroom.google.com/" target="_blank">
       <h3>CLASSROOM</h3>
-      <p>Redirect to the Google Classroom Devops</p>
+      <p>Redirect to Google Classroom DevOps</p>
     </a>
-  <a class="card" href="https://killercoda.com/" target="_blank">
-      <h3>KILLER CODA</h3>
-      <p>Redirect to the KILLER CODA</p>
-    </a>
-  </div>
 
+    <a class="card" href="https://killercoda.com/" target="_blank">
+      <h3>KILLER CODA</h3>
+      <p>Redirect to KILLER CODA</p>
+    </a>
+
+  </div>
 </div>
 
 <footer>
@@ -158,12 +159,28 @@
   © 2026 Methlesh Kumar
 </footer>
 
+<script>
+  function getRandomColor() {
+    return Math.floor(Math.random() * 256);
+  }
+
+  function generateGradient() {
+    const color1 = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+    const color2 = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+    const angle = Math.floor(Math.random() * 360);
+    return `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+  }
+
+  function changeBackground() {
+    document.body.style.background = generateGradient();
+  }
+
+  // Change on page load
+  window.onload = changeBackground;
+
+  // Change on click anywhere
+  document.body.addEventListener("click", changeBackground);
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
